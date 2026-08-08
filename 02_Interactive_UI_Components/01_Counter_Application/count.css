@@ -1,0 +1,19 @@
+#countlabel{
+    display:block;
+    text-align:center;
+    font-size:5em;
+
+}
+.button{
+    text-align:center;
+}
+.buttons{
+    padding:20px;
+    border-radius:20px;
+    color:black;
+    background-color:antiquewhite;
+    transition: background-color 0.25s;
+}
+.buttons:hover{
+    background-color:burlywood
+}

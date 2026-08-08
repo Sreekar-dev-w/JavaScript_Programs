@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Practice</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 40px;
+        background: #111;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px 0;
+      }
+
+      .box1 {
+        background: crimson;
+      }
+
+      .box2 {
+        background: royalblue;
+      }
+
+      .box3 {
+        background: limegreen;
+      }
+
+      .box4 {
+        background: orange;
+      }
+
+      .box5 {
+        background: violet;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>GSAP Playground</h1>
+
+    <button id="moveBtn">Move</button>
+    <button id="rotateBtn">Rotate</button>
+    <button id="scaleBtn">Scale</button>
+    <button id="fromBtn">From</button>
+    <button id="timelineBtn">Timeline</button>
+
+    <div class="container">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+      <div class="box box4"></div>
+      <div class="box box5"></div>
+    </div>
+
+    <script>
+      document.getElementById("moveBtn").addEventListener("click", () => {
+        gsap.to(".box1", {
+          x: 300,
+          duration:60,
+        });
+      });
+
+      document.getElementById("rotateBtn").addEventListener("click", () => {
+        gsap.to(".box2", {
+          rotation: 480,
+          duration: 4,
+          repeat:-1,
+          ease:"stps(12)",
+          y:-100,
+        });
+      });
+
+      document.getElementById("scaleBtn").addEventListener("click", () => {
+        gsap.to(".box3", {
+          scale: 2,
+          duration: 1,
+          yoyo: true,
+          repeat: -1,
+        });
+      });
+
+      document.getElementById("fromBtn").addEventListener("click", () => {
+        gsap.from(".box4", {
+          x: -300,
+          opacity: 0,
+          duration: 1.5,
+        });
+      });
+
+      document.getElementById("timelineBtn").addEventListener("click", () => {
+        let tl = gsap.timeline();
+
+        tl.to(".box1", {
+          x: 300,
+          duration: 1,
+        });
+
+        tl.to(".box2", {
+          x: 300,
+          duration: 1,
+        });
+
+        tl.to(".box3", {
+          x: 300,
+          duration: 1,
+        });
+
+        tl.to(".box4", {
+          x: 300,
+          duration: 1,
+        });
+
+        tl.to(".box5", {
+          x: 300,
+          duration: 1,
+        });
+      });
+    </script>
+  </body>
+</html>
